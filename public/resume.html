@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abhinav Meduri - Resume</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background: white;
+        }
+        .header {
+            text-align: center;
+            border-bottom: 3px solid #3b82f6;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+        .name {
+            font-size: 2.5em;
+            font-weight: bold;
+            color: #1e40af;
+            margin-bottom: 10px;
+        }
+        .contact {
+            color: #6b7280;
+            font-size: 1.1em;
+        }
+        .section {
+            margin-bottom: 30px;
+        }
+        .section-title {
+            font-size: 1.5em;
+            font-weight: bold;
+            color: #1e40af;
+            border-bottom: 2px solid #e5e7eb;
+            padding-bottom: 5px;
+            margin-bottom: 15px;
+        }
+        .experience-item, .education-item {
+            margin-bottom: 20px;
+            padding: 15px;
+            background: #f8fafc;
+            border-left: 4px solid #3b82f6;
+        }
+        .job-title {
+            font-weight: bold;
+            font-size: 1.2em;
+            color: #1e40af;
+        }
+        .company {
+            font-weight: bold;
+            color: #374151;
+        }
+        .date {
+            color: #6b7280;
+            font-style: italic;
+        }
+        .location {
+            color: #6b7280;
+        }
+        .achievements {
+            margin-top: 10px;
+        }
+        .achievements li {
+            margin-bottom: 5px;
+        }
+        .skills {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+        }
+        .skill-category {
+            background: #f1f5f9;
+            padding: 15px;
+            border-radius: 8px;
+        }
+        .skill-category h4 {
+            margin-top: 0;
+            color: #1e40af;
+        }
+        .skill-list {
+            list-style: none;
+            padding: 0;
+        }
+        .skill-list li {
+            background: #e0e7ff;
+            margin: 5px 0;
+            padding: 5px 10px;
+            border-radius: 4px;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="name">Abhinav Meduri</div>
+        <div class="contact">
+            abhinav.meduri@duke.edu | Durham, NC | (555) 123-4567<br>
+            GitHub: github.com/abhinavmeduri | LinkedIn: linkedin.com/in/abhinavmeduri
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="section-title">Education</div>
+        <div class="education-item">
+            <div class="job-title">Duke University</div>
+            <div class="company">Bachelor of Science, Computer Science and Statistics</div>
+            <div class="date">Expected: May 2028 • GPA: 3.93</div>
+            <div class="location">Durham, NC</div>
+            <div class="achievements">
+                <strong>Relevant Courses:</strong> Data Structures and Algorithms, Computer Architecture, Database Systems, Applied Machine Learning, Linear Algebra, Probability, Regression Analysis
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="section-title">Work Experience</div>
+        
+        <div class="experience-item">
+            <div class="job-title">Software Engineer Intern</div>
+            <div class="company">Systrends, Inc.</div>
+            <div class="date">Jun 2025 – Present</div>
+            <div class="location">Phoenix, AZ (Remote)</div>
+            <div class="achievements">
+                <ul>
+                    <li>Developed an Angular Material UI with dynamic form logic and inline validation for 200+ rate-regulated utilities, reducing average Federal Energy Regulatory Commission (FERC) filing time by 70% (from 10 hours to ~3 hours per submission)</li>
+                    <li>Implemented ASP.NET Core Web API service to automate generation and transfer of ANSI X12 EDI documents to legacy utility billing systems via SFTP, reducing manual entry errors in 50+ FERC regulatory filings</li>
+                    <li>Built a modular PDF generation microservice using .NET Razor (C#) templates with TypeScript orchestration to produce standardized rate case documents across 5 state and federal filing formats</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="experience-item">
+            <div class="job-title">Software Engineer Intern</div>
+            <div class="company">EcoLong (energy tech startup)</div>
+            <div class="date">May 2025 – Aug 2025</div>
+            <div class="location">Albany, NY (Remote)</div>
+            <div class="achievements">
+                <ul>
+                    <li>Developed a client-side JavaScript application leveraging an event-driven architecture with DOM manipulation to automate electrical load calculations and HVAC energy-efficiency assessments for 1,000+ residential properties in upstate New York</li>
+                    <li>Architected a data pipeline to ingest structured JSON portfolio data and integrate with the U.S. Department of Energy's SEED REST API, reducing preprocessing time from hours to minutes for utility-scale benchmarking and energy modeling</li>
+                    <li>Leveraged Swagger UI for endpoint testing and OpenAPI validation; used PostgreSQL queries to troubleshoot API errors</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="experience-item">
+            <div class="job-title">Machine Learning Engineer</div>
+            <div class="company">Duke University Materials Initiative</div>
+            <div class="date">Mar 2025 – Present</div>
+            <div class="location">Durham, NC</div>
+            <div class="achievements">
+                <ul>
+                    <li>Developed denoising diffusion generative models using TorchDiff to guide inverse design of polymer-grafted nanoparticles</li>
+                    <li>Applied Bayesian active learning methods to iteratively optimize design parameters (e.g., elastic modulus and dispersion)</li>
+                    <li>Ran Monte Carlo simulations in HOOMD-blue to generate training data; used freud Python library for model validation</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="section-title">Technical Skills</div>
+        <div class="skills">
+            <div class="skill-category">
+                <h4>Programming Languages</h4>
+                <ul class="skill-list">
+                    <li>Java</li>
+                    <li>Python</li>
+                    <li>C++</li>
+                    <li>C</li>
+                    <li>JavaScript/TypeScript</li>
+                    <li>HTML/CSS</li>
+                    <li>SQL (Postgres, MySQL)</li>
+                    <li>R</li>
+                    <li>Assembly</li>
+                </ul>
+            </div>
+            <div class="skill-category">
+                <h4>Frameworks/Technologies</h4>
+                <ul class="skill-list">
+                    <li>Angular</li>
+                    <li>React/Next.js</li>
+                    <li>Node.js</li>
+                    <li>ASP.NET Core</li>
+                    <li>MongoDB</li>
+                    <li>Linux/Unix</li>
+                    <li>AWS</li>
+                    <li>PyTorch</li>
+                </ul>
+            </div>
+            <div class="skill-category">
+                <h4>Core Skills</h4>
+                <ul class="skill-list">
+                    <li>Object-Oriented Programming</li>
+                    <li>AI/ML</li>
+                    <li>RESTful APIs</li>
+                    <li>Full-Stack Development</li>
+                    <li>High-Performance Computing</li>
+                    <li>Unit Testing</li>
+                    <li>Git/GitHub</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
