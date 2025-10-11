@@ -1,55 +1,30 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Download, Github, Linkedin, Mail } from 'lucide-react';
+import { Github, Linkedin, Mail } from 'lucide-react';
+import Image from 'next/image';
 
 const Hero = () => {
   return (
-    <section className="min-h-screen flex items-center justify-center bg-gradient-to-br from-gray-900 to-gray-800">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          {/* Left side - Text content */}
+    <section id="home" className="min-h-[50vh] flex items-center justify-center relative overflow-hidden bg-gradient-to-b from-gray-900 to-gray-800">
+      <div className="max-w-6xl mx-auto px-6 sm:px-8">
+        <div className="flex flex-col md:flex-row-reverse items-center justify-center gap-12">
+          {/* Right side - Text content */}
           <motion.div
-            initial={{ opacity: 0, x: -50 }}
+            initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
-            className="text-center lg:text-left"
+            className="text-left flex-1 max-w-2xl"
           >
-            <motion.h1
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              className="text-4xl md:text-6xl font-bold text-white mb-6"
-            >
-              Hi, I'm{' '}
-              <span className="text-gray-400">Abhinav Meduri</span>
-            </motion.h1>
-            
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.4 }}
-              className="text-xl md:text-2xl text-gray-300 mb-8"
-            >
-              Software Engineer & Machine Learning Engineer
-            </motion.p>
-            
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.6 }}
-              className="text-lg text-gray-400 mb-8 max-w-2xl"
-            >
-              Passionate about building scalable software solutions and applying machine learning 
-              to solve real-world problems. Currently pursuing Computer Science and Statistics 
-              at Duke University.
-            </motion.p>
+            <p className="text-lg text-gray-300">
+              I&apos;m a student at <span className="text-blue-400">Duke University</span> studying <span className="text-blue-400">Computer Science & Statistical Science</span>, passionate about software, automation, and high-performance computing.
+            </p>
 
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.8 }}
-              className="flex justify-center lg:justify-start"
+              className="flex flex-wrap gap-4 mt-10"
             >
               <motion.a
                 href="#contact"
@@ -67,7 +42,7 @@ const Hero = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 1.0 }}
-              className="flex justify-center lg:justify-start gap-6 mt-8"
+              className="flex flex-wrap justify-start gap-4 mt-8"
             >
               <motion.a
                 href="https://github.com/abhinavmeduri"
@@ -101,47 +76,19 @@ const Hero = () => {
             </motion.div>
           </motion.div>
 
-          {/* Right side - Image/Visual */}
+          {/* Left side - Headshot */}
           <motion.div
-            initial={{ opacity: 0, x: 50 }}
+            initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="flex justify-center lg:justify-end"
+            className="flex justify-center"
           >
-            <div className="relative">
-              <motion.div
-                animate={{ 
-                  rotate: [0, 5, -5, 0],
-                  scale: [1, 1.05, 1]
-                }}
-                transition={{ 
-                  duration: 6,
-                  repeat: Infinity,
-                  ease: "easeInOut"
-                }}
-                className="w-80 h-80 bg-gradient-to-br from-blue-400 to-purple-500 rounded-full flex items-center justify-center shadow-2xl"
-              >
-                <div className="w-72 h-72 bg-white rounded-full flex items-center justify-center shadow-lg">
-                  <div className="text-6xl font-bold text-blue-600">AM</div>
-                </div>
-              </motion.div>
-              
-              {/* Floating elements */}
-              <motion.div
-                animate={{ y: [-10, 10, -10] }}
-                transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
-                className="absolute -top-4 -right-4 w-16 h-16 bg-yellow-400 rounded-full flex items-center justify-center shadow-lg"
-              >
-                <span className="text-2xl">🚀</span>
-              </motion.div>
-              
-              <motion.div
-                animate={{ y: [10, -10, 10] }}
-                transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-                className="absolute -bottom-4 -left-4 w-12 h-12 bg-green-400 rounded-full flex items-center justify-center shadow-lg"
-              >
-                <span className="text-xl">💻</span>
-              </motion.div>
+            <div className="relative w-48 h-48 md:w-56 md:h-56 overflow-hidden rounded-2xl shadow-2xl">
+              <img 
+                src="/logos/headshot.jpeg" 
+                alt="Abhinav Meduri"
+                className="w-full h-full object-cover"
+              />
             </div>
           </motion.div>
         </div>

@@ -3,7 +3,7 @@
 import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import { useRef } from 'react';
-import { Calendar, MapPin, ExternalLink } from 'lucide-react';
+import { MapPin } from 'lucide-react';
 import CompanyLogo from './CompanyLogo';
 
 const Experience = () => {
@@ -11,6 +11,12 @@ const Experience = () => {
   const isInView = useInView(ref, { once: true });
 
   const experiences = [
+    {
+      company: 'Reveal Genomics',
+      position: 'Machine Learning Engineer',
+      duration: 'Oct 2025 – Present',
+      location: 'Barcelona, Spain (Remote)'
+    },
     {
       company: 'Systrends, Inc.',
       position: 'Software Engineer Intern',
@@ -33,40 +39,46 @@ const Experience = () => {
 
   return (
     <section id="experience" className="py-20 bg-gray-900">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6">
         <motion.div
           ref={ref}
-          initial={{ opacity: 0, y: 50 }}
-          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
-          transition={{ duration: 0.8 }}
-          className="text-center mb-16"
+          initial={{ opacity: 0, y: 30 }}
+          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+          transition={{ duration: 0.6 }}
+          className="mb-12"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-            Work Experience
+          <h2 className="text-3xl font-bold text-white mb-2">
+            Experience
           </h2>
-          <div className="w-24 h-1 bg-gray-600 mx-auto"></div>
+          <div className="w-16 h-0.5 bg-gray-600"></div>
         </motion.div>
 
-        <div className="space-y-12">
+        <div className="space-y-4">
           {experiences.map((exp, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0, y: 50 }}
-              animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
-              transition={{ duration: 0.8, delay: index * 0.2 }}
-              className="bg-gray-800 rounded-lg p-6 hover:bg-gray-750 transition-colors duration-300"
+              initial={{ opacity: 0, y: 20 }}
+              animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+              transition={{ duration: 0.6, delay: index * 0.15 }}
+              className="bg-gray-800/50 hover:bg-gray-750/70 transition-colors duration-200 rounded-lg p-4 border-l-4 border-gray-600 hover:border-gray-400"
             >
-              <div className="flex items-center space-x-4">
-                <div className="w-16 h-16 bg-transparent rounded-lg flex items-center justify-center">
-                  <CompanyLogo company={exp.company} size={exp.company.toLowerCase().includes('duke') ? 56 : 44} />
+              <div className="flex items-start">
+                <div className={`${exp.company.includes('Reveal') ? 'w-14 h-14' : 'w-10 h-10'} bg-transparent rounded flex-shrink-0 flex items-center justify-center mr-3`}>
+                  <CompanyLogo company={exp.company} size={exp.company.includes('Reveal') ? 44 : 32} />
                 </div>
-                <div className="flex-1">
-                  <h3 className="text-lg font-semibold text-white">{exp.position}</h3>
-                  <p className="text-gray-300 text-sm">{exp.company}</p>
-                </div>
-                <div className="text-right">
-                  <div className="text-gray-400 text-sm">{exp.duration}</div>
-                  <div className="text-gray-500 text-xs">{exp.location}</div>
+                <div className="flex-1 min-w-0">
+                  <div className="flex flex-col sm:flex-row sm:items-baseline sm:justify-between">
+                    <h3 className="text-base font-medium text-white truncate">{exp.position}</h3>
+                    <div className="text-sm text-gray-400 whitespace-nowrap sm:ml-2">{exp.duration}</div>
+                  </div>
+                  <div className="flex items-center text-sm text-gray-400 mt-1">
+                    <span className="font-medium">{exp.company}</span>
+                    <span className="mx-2">•</span>
+                    <span className="flex items-center">
+                      <MapPin className="w-3.5 h-3.5 mr-1" />
+                      {exp.location}
+                    </span>
+                  </div>
                 </div>
               </div>
             </motion.div>

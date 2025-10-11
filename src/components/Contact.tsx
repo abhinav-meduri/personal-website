@@ -6,7 +6,7 @@ import { useRef, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
-import { Mail, Phone, MapPin, Send, Github, Linkedin, ExternalLink } from 'lucide-react';
+import { Mail, MapPin, Send, Github, Linkedin } from 'lucide-react';
 
 const contactSchema = z.object({
   name: z.string().min(2, 'Name must be at least 2 characters'),
@@ -59,7 +59,7 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="py-20 bg-gray-800">
+    <section id="contact" className="py-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           ref={ref}
@@ -68,14 +68,6 @@ const Contact = () => {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-            Get In Touch
-          </h2>
-          <div className="w-24 h-1 bg-gray-600 mx-auto"></div>
-          <p className="text-xl text-gray-300 mt-6 max-w-2xl mx-auto">
-            I'm always interested in new opportunities and collaborations. 
-            Feel free to reach out!
-          </p>
         </motion.div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
@@ -86,78 +78,88 @@ const Contact = () => {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="space-y-8"
           >
-            <div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-6">
-                Let's Connect
-              </h3>
-              <p className="text-gray-600 mb-8">
-                I'm currently looking for internship opportunities and research collaborations. 
-                Whether you have a project in mind or just want to chat about technology, 
-                I'd love to hear from you!
-              </p>
-            </div>
-
             <div className="space-y-6">
-              <motion.div
-                whileHover={{ scale: 1.05 }}
-                className="flex items-center space-x-4 p-4 bg-gray-700 rounded-lg shadow-md hover:shadow-lg transition-shadow"
-              >
-                <div className="w-12 h-12 bg-gray-600 rounded-full flex items-center justify-center">
-                  <Mail className="w-6 h-6 text-white" />
-                </div>
-                <div>
-                  <h4 className="font-semibold text-white">Email</h4>
-                  <p className="text-gray-300">avm29@duke.edu</p>
-                </div>
-              </motion.div>
+              <div className="pb-6 border-b border-gray-700">
+                <h3 className="text-2xl font-bold text-white mb-6">
+                  Let's Connect
+                </h3>
+                <p className="text-lg text-gray-300 mb-8">
+                  Have a question or want to work together? I&apos;d love to hear from you!
+                  Feel free to reach out through the form below or connect with me on
+                  LinkedIn. I&apos;ll get back to you as soon as possible.
+                </p>
+              </div>
+              
+              <div className="pt-2">
+                <h3 className="text-2xl font-bold text-white mb-6">
+                  Get In Touch
+                </h3>
+                <div className="space-y-6">
+                  <motion.div
+                    whileHover={{ scale: 1.05 }}
+                    className="flex items-center space-x-4 p-4 bg-gray-700 rounded-lg shadow-md hover:shadow-lg transition-shadow"
+                  >
+                    <div className="w-12 h-12 bg-gray-600 rounded-full flex items-center justify-center">
+                      <Mail className="w-6 h-6 text-white" />
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-white">Email</h4>
+                      <p className="text-gray-300">avm29@duke.edu</p>
+                    </div>
+                  </motion.div>
 
-              <motion.div
-                whileHover={{ scale: 1.05 }}
-                className="flex items-center space-x-4 p-4 bg-gray-700 rounded-lg shadow-md hover:shadow-lg transition-shadow"
-              >
-                <div className="w-12 h-12 bg-gray-600 rounded-full flex items-center justify-center">
-                  <MapPin className="w-6 h-6 text-white" />
+                  <motion.div
+                    whileHover={{ scale: 1.05 }}
+                    className="flex items-center space-x-4 p-4 bg-gray-700 rounded-lg shadow-md hover:shadow-lg transition-shadow"
+                  >
+                    <div className="w-12 h-12 bg-gray-600 rounded-full flex items-center justify-center">
+                      <MapPin className="w-6 h-6 text-white" />
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-white">Location</h4>
+                      <p className="text-gray-300">Durham, NC</p>
+                    </div>
+                  </motion.div>
                 </div>
-                <div>
-                  <h4 className="font-semibold text-white">Location</h4>
-                  <p className="text-gray-300">Durham, NC</p>
-                </div>
-              </motion.div>
-            </div>
+              </div>
 
-            {/* Social Links */}
-            <div>
-              <h4 className="text-lg font-semibold text-white mb-4">
-                Follow Me
-              </h4>
-              <div className="flex space-x-4">
-                <motion.a
-                  href="https://github.com/abhinavmeduri"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  whileHover={{ scale: 1.1, y: -2 }}
-                  className="w-12 h-12 bg-gray-900 rounded-full flex items-center justify-center text-white hover:bg-gray-800 transition-colors"
-                >
-                  <Github className="w-6 h-6" />
-                </motion.a>
-                <motion.a
-                  href="https://linkedin.com/in/abhinavmeduri"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  whileHover={{ scale: 1.1, y: -2 }}
-                  className="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center text-white hover:bg-blue-700 transition-colors"
-                >
-                  <Linkedin className="w-6 h-6" />
-                </motion.a>
-                <motion.a
-                  href="https://researchgate.net/profile/abhinav-meduri"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  whileHover={{ scale: 1.1, y: -2 }}
-                  className="w-12 h-12 bg-green-600 rounded-full flex items-center justify-center text-white hover:bg-green-700 transition-colors"
-                >
-                  <ExternalLink className="w-6 h-6" />
-                </motion.a>
+              {/* Social Links */}
+              <div>
+                <h4 className="text-lg font-semibold text-white mb-4">
+                  Follow Me
+                </h4>
+                <div className="flex space-x-4">
+                  <motion.a
+                    href="https://github.com/abhinavmeduri"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    whileHover={{ scale: 1.1, y: -2 }}
+                    className="w-12 h-12 bg-gray-900 rounded-full flex items-center justify-center text-white hover:bg-gray-800 transition-colors"
+                  >
+                    <Github className="w-6 h-6" />
+                  </motion.a>
+                  <motion.a
+                    href="https://linkedin.com/in/abhinavmeduri"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    whileHover={{ scale: 1.1, y: -2 }}
+                    className="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center text-white hover:bg-blue-700 transition-colors"
+                  >
+                    <Linkedin className="w-6 h-6" />
+                  </motion.a>
+                  <motion.a
+                    href="https://researchgate.net/profile/abhinav-meduri"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    whileHover={{ scale: 1.1, y: -2 }}
+                    className="w-12 h-12 bg-green-600 rounded-full flex items-center justify-center text-white hover:bg-green-700 transition-colors"
+                    aria-label="ResearchGate Profile"
+                  >
+                    <svg className="w-6 h-6" viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M2 0h20v24h-20v-24zm5.5 22.5h-1.5v-10h1.5v10zm7.5-1.5h-1.5v-10h1.5v10zm-3.75-10.5h-1.5v11.5h1.5v-11.5zm7.5-1.5h-1.5v13h1.5v-13z"/>
+                    </svg>
+                  </motion.a>
+                </div>
               </div>
             </div>
           </motion.div>
@@ -167,22 +169,22 @@ const Contact = () => {
             initial={{ opacity: 0, x: 50 }}
             animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 50 }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="bg-white rounded-lg shadow-lg p-8"
+            className="bg-gray-800/50 rounded-lg shadow-lg p-8 border border-gray-700/50"
           >
-            <h3 className="text-2xl font-bold text-gray-900 mb-6">
+            <h3 className="text-2xl font-bold text-white mb-6">
               Send a Message
             </h3>
 
             <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
               <div>
-                <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
+                <label htmlFor="name" className="block text-sm font-medium text-gray-300 mb-2">
                   Name *
                 </label>
                 <input
                   {...register('name')}
                   type="text"
-                  className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent ${
-                    errors.name ? 'border-red-500' : 'border-gray-300'
+                  className={`w-full px-4 py-3 bg-gray-700/50 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent text-white placeholder-gray-400 ${
+                    errors.name ? 'border-red-500' : 'border-gray-600'
                   }`}
                   placeholder="Your name"
                 />
@@ -192,14 +194,14 @@ const Contact = () => {
               </div>
 
               <div>
-                <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
+                <label htmlFor="email" className="block text-sm font-medium text-gray-300 mb-2">
                   Email *
                 </label>
                 <input
                   {...register('email')}
                   type="email"
-                  className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent ${
-                    errors.email ? 'border-red-500' : 'border-gray-300'
+                  className={`w-full px-4 py-3 bg-gray-700/50 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent text-white placeholder-gray-400 ${
+                    errors.email ? 'border-red-500' : 'border-gray-600'
                   }`}
                   placeholder="your.email@example.com"
                 />
@@ -209,14 +211,14 @@ const Contact = () => {
               </div>
 
               <div>
-                <label htmlFor="subject" className="block text-sm font-medium text-gray-700 mb-2">
+                <label htmlFor="subject" className="block text-sm font-medium text-gray-300 mb-2">
                   Subject *
                 </label>
                 <input
                   {...register('subject')}
                   type="text"
-                  className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent ${
-                    errors.subject ? 'border-red-500' : 'border-gray-300'
+                  className={`w-full px-4 py-3 bg-gray-700/50 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent text-white placeholder-gray-400 ${
+                    errors.subject ? 'border-red-500' : 'border-gray-600'
                   }`}
                   placeholder="What's this about?"
                 />
@@ -226,40 +228,37 @@ const Contact = () => {
               </div>
 
               <div>
-                <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
+                <label htmlFor="message" className="block text-sm font-medium text-gray-300 mb-2">
                   Message *
                 </label>
                 <textarea
                   {...register('message')}
                   rows={5}
-                  className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent ${
-                    errors.message ? 'border-red-500' : 'border-gray-300'
+                  className={`w-full px-4 py-3 bg-gray-700/50 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent text-white placeholder-gray-400 ${
+                    errors.message ? 'border-red-500' : 'border-gray-600'
                   }`}
-                  placeholder="Tell me about your project or just say hello!"
-                />
+                  placeholder="Your message here..."
+                ></textarea>
                 {errors.message && (
                   <p className="mt-1 text-sm text-red-600">{errors.message.message}</p>
                 )}
               </div>
 
               {submitStatus === 'success' && (
-                <div className="p-4 bg-green-100 border border-green-400 text-green-700 rounded-lg">
-                  Thank you! Your message has been sent successfully.
-                </div>
+                <p className="mt-4 p-3 bg-green-900/30 text-green-400 border border-green-800 rounded-lg text-sm">
+                  Your message has been sent successfully!
+                </p>
               )}
-
               {submitStatus === 'error' && (
-                <div className="p-4 bg-red-100 border border-red-400 text-red-700 rounded-lg">
-                  Sorry, there was an error sending your message. Please try again.
-                </div>
+                <p className="mt-4 p-3 bg-red-900/30 text-red-400 border border-red-800 rounded-lg text-sm">
+                  There was an error sending your message. Please try again later.
+                </p>
               )}
 
-              <motion.button
+              <button
                 type="submit"
                 disabled={isSubmitting}
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="w-full bg-blue-600 text-white py-3 px-6 rounded-lg hover:bg-blue-700 disabled:opacity-50 disabled:cursor-not-allowed transition-colors flex items-center justify-center"
+                className="w-full bg-blue-600 text-white py-3 px-6 rounded-lg font-medium hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center space-x-2 transition-colors"
               >
                 {isSubmitting ? (
                   <>
@@ -272,7 +271,7 @@ const Contact = () => {
                     Send Message
                   </>
                 )}
-              </motion.button>
+              </button>
             </form>
           </motion.div>
         </div>

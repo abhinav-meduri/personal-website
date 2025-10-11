@@ -12,7 +12,9 @@ const CompanyLogo = ({ company, size = 48, className = '' }: CompanyLogoProps) =
   const getLogoPath = () => {
     const companyLower = company.toLowerCase();
     
-    if (companyLower.includes('systrends')) {
+    if (companyLower.includes('reveal')) {
+      return `/logos/reveal.png?t=${new Date().getTime()}`;
+    } else if (companyLower.includes('systrends')) {
       return '/logos/systrendsnew.png';
     } else if (companyLower.includes('ecolong')) {
       return '/logos/ecolong.png';
@@ -36,6 +38,8 @@ const CompanyLogo = ({ company, size = 48, className = '' }: CompanyLogoProps) =
     );
   }
 
+  const isReveal = company.toLowerCase().includes('reveal');
+
   return (
     <motion.div
       whileHover={{ scale: 1.05 }}
@@ -47,7 +51,7 @@ const CompanyLogo = ({ company, size = 48, className = '' }: CompanyLogoProps) =
         alt={`${company} logo`}
         width={size}
         height={size}
-        className="object-contain logo-transparent"
+        className={`object-contain logo-transparent ${isReveal ? 'brightness-0 invert' : ''}`}
         style={{ 
           maxWidth: size, 
           maxHeight: size,

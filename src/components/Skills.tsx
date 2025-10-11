@@ -51,19 +51,19 @@ const Skills = () => {
   ];
 
   return (
-    <section id="skills" className="py-20 bg-gray-800">
+    <section id="skills" className="pt-16 pb-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           ref={ref}
           initial={{ opacity: 0, y: 50 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
           transition={{ duration: 0.8 }}
-          className="text-center mb-16"
+          className="mb-12 text-center"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+          <h2 className="text-3xl font-bold text-white mb-2">
             Technical Skills
           </h2>
-          <div className="w-24 h-1 bg-gray-600 mx-auto"></div>
+          <div className="w-16 h-0.5 bg-gray-600 mx-auto"></div>
         </motion.div>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
@@ -102,7 +102,7 @@ const Skills = () => {
                         initial={{ width: 0 }}
                         animate={isInView ? { width: `${skill.level}%` } : { width: 0 }}
                         transition={{ duration: 1, delay: (categoryIndex * 0.2) + (skillIndex * 0.1) + 0.3 }}
-                        className="bg-gradient-to-r from-gray-400 to-gray-500 h-2 rounded-full"
+                        className="h-2 rounded-full bg-blue-500"
                       />
                     </div>
                   </motion.div>
@@ -111,37 +111,6 @@ const Skills = () => {
             </motion.div>
           ))}
         </div>
-
-        {/* Additional Skills Section */}
-        <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
-          transition={{ duration: 0.8, delay: 0.6 }}
-          className="mt-16"
-        >
-          <h3 className="text-2xl font-bold text-white mb-8 text-center">
-            Additional Expertise
-          </h3>
-          
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-            {[
-              'Machine Learning', 'Data Science', 'Cloud Computing', 'DevOps',
-              'Database Design', 'API Development', 'Microservices', 'Agile/Scrum',
-              'Version Control', 'Code Review', 'Documentation', 'Problem Solving'
-            ].map((skill, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }}
-                transition={{ duration: 0.5, delay: 0.8 + (index * 0.05) }}
-                whileHover={{ scale: 1.05 }}
-                className="bg-gray-700 rounded-lg shadow-md p-4 text-center hover:shadow-lg transition-shadow duration-300"
-              >
-                <span className="text-sm font-medium text-gray-300">{skill}</span>
-              </motion.div>
-            ))}
-          </div>
-        </motion.div>
       </div>
     </section>
   );

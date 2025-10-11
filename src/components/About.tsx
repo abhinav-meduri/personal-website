@@ -24,79 +24,45 @@ const About = () => {
           <div className="w-24 h-1 bg-gray-600 mx-auto"></div>
         </motion.div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div className="max-w-4xl mx-auto">
           <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -50 }}
+            initial={{ opacity: 0, y: 20 }}
+            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="space-y-6"
+            className="space-y-8"
           >
-            <p className="text-lg text-gray-300 leading-relaxed">
-              I'm a passionate Computer Science and Statistics student at Duke University with a 
-              strong foundation in software engineering and machine learning. My journey in tech 
-              began with a curiosity about how systems work and has evolved into a deep passion 
-              for building solutions that make a real impact.
-            </p>
-            
-            <p className="text-lg text-gray-300 leading-relaxed">
-              Currently, I'm working as a Software Engineer Intern at Systrends, Inc., where I've 
-              developed Angular Material UIs and ASP.NET Core Web APIs that have significantly 
-              improved efficiency for utility companies. I'm also contributing to machine learning 
-              research at Duke University Materials Initiative, working on denoising diffusion 
-              generative models for polymer design.
-            </p>
-            
-            <p className="text-lg text-gray-300 leading-relaxed">
-              When I'm not coding, you can find me exploring new technologies, contributing to 
-              open-source projects, or diving deep into the latest research in machine learning 
-              and materials science.
-            </p>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 50 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-            className="space-y-6"
-          >
-            <div className="bg-gray-700 rounded-lg p-6">
-              <h3 className="text-xl font-semibold text-white mb-4">Education</h3>
-              <div className="space-y-3">
+            <div className="bg-gray-700 rounded-xl p-8">
+              <h3 className="text-2xl font-bold text-white mb-6">Interests</h3>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
-                  <h4 className="font-medium text-white">Duke University</h4>
-                  <p className="text-gray-300">Bachelor of Science, Computer Science and Statistics</p>
-                  <p className="text-sm text-gray-400">Expected: May 2028 • GPA: 3.93</p>
+                  <h4 className="text-lg font-semibold text-gray-200 mb-3">Software Development</h4>
+                  <p className="text-gray-300">
+                    Building efficient, scalable applications with modern web technologies and frameworks.
+                    I enjoy working across the full stack and creating seamless user experiences.
+                  </p>
                 </div>
                 <div>
-                  <h4 className="font-medium text-white">Relevant Coursework</h4>
-                  <p className="text-sm text-gray-300">
-                    Data Structures & Algorithms, Computer Architecture, Database Systems, 
-                    Applied Machine Learning, Linear Algebra, Probability, Regression Analysis
+                  <h4 className="text-lg font-semibold text-gray-200 mb-3">Data Science & ML</h4>
+                  <p className="text-gray-300">
+                    Exploring data-driven solutions and machine learning models to solve complex problems
+                    and extract meaningful insights from data.
+                  </p>
+                </div>
+                <div>
+                  <h4 className="text-lg font-semibold text-gray-200 mb-3">High-Performance Computing</h4>
+                  <p className="text-gray-300">
+                    Optimizing computational performance and working with large-scale systems
+                    to solve resource-intensive problems efficiently.
+                  </p>
+                </div>
+                <div>
+                  <h4 className="text-lg font-semibold text-gray-200 mb-3">Open Source</h4>
+                  <p className="text-gray-300">
+                    Contributing to open-source projects and building tools that benefit the developer
+                    community. I believe in the power of collaborative development.
                   </p>
                 </div>
               </div>
-            </div>
-
-            <div className="bg-gray-700 rounded-lg p-6">
-              <h3 className="text-xl font-semibold text-white mb-4">Current Focus</h3>
-              <ul className="space-y-2 text-gray-300">
-                <li className="flex items-center">
-                  <span className="w-2 h-2 bg-gray-500 rounded-full mr-3"></span>
-                  Full-Stack Development
-                </li>
-                <li className="flex items-center">
-                  <span className="w-2 h-2 bg-gray-500 rounded-full mr-3"></span>
-                  Machine Learning & AI
-                </li>
-                <li className="flex items-center">
-                  <span className="w-2 h-2 bg-gray-500 rounded-full mr-3"></span>
-                  High-Performance Computing
-                </li>
-                <li className="flex items-center">
-                  <span className="w-2 h-2 bg-gray-500 rounded-full mr-3"></span>
-                  Materials Science Applications
-                </li>
-              </ul>
             </div>
           </motion.div>
         </div>
@@ -106,4 +72,3 @@ const About = () => {
 };
 
 export default About;
-
