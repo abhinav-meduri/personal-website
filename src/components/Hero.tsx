@@ -45,7 +45,7 @@ const Hero = () => {
               className="flex flex-wrap justify-start gap-4 mt-8"
             >
               <motion.a
-                href="https://github.com/abhinavmeduri"
+                href="https://github.com/abhinav-meduri"
                 target="_blank"
                 rel="noopener noreferrer"
                 whileHover={{ scale: 1.2, y: -2 }}

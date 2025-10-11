@@ -20,7 +20,7 @@ const Footer = () => {
             <h3 className="text-2xl font-bold">Abhinav Meduri</h3>
             <div className="flex space-x-4">
               <motion.a
-                href="https://github.com/abhinavmeduri"
+                href="https://github.com/abhinav-meduri"
                 target="_blank"
                 rel="noopener noreferrer"
                 whileHover={{ scale: 1.1, y: -2 }}
