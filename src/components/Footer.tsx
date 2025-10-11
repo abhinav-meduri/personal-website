@@ -18,10 +18,6 @@ const Footer = () => {
             className="space-y-4"
           >
             <h3 className="text-2xl font-bold">Abhinav Meduri</h3>
-            <p className="text-gray-400">
-              Software Engineer & Machine Learning Engineer passionate about 
-              building innovative solutions and advancing technology.
-            </p>
             <div className="flex space-x-4">
               <motion.a
                 href="https://github.com/abhinavmeduri"
