@@ -62,17 +62,6 @@ const Hero = () => {
               >
                 <Linkedin size={24} />
               </motion.a>
-              <motion.a
-                href="https://researchgate.net/profile/abhinav-meduri"
-                target="_blank"
-                rel="noopener noreferrer"
-                whileHover={{ scale: 1.2, y: -2 }}
-                className="text-gray-400 hover:text-white transition-colors"
-              >
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.568 8.16c-.169 0-.339.006-.508.016-.169-.01-.339-.016-.508-.016-2.5 0-4.5 2-4.5 4.5s2 4.5 4.5 4.5c.169 0 .339-.006.508-.016.169.01.339.016.508.016 2.5 0 4.5-2 4.5-4.5s-2-4.5-4.5-4.5z"/>
-                </svg>
-              </motion.a>
             </motion.div>
           </motion.div>
 
