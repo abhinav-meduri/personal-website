@@ -6,9 +6,9 @@ import Image from 'next/image';
 
 const Hero = () => {
   return (
-    <section id="home" className="min-h-[50vh] flex items-center justify-center relative overflow-hidden bg-gradient-to-b from-gray-900 to-gray-800">
-      <div className="max-w-6xl mx-auto px-6 sm:px-8">
-        <div className="flex flex-col md:flex-row-reverse items-center justify-center gap-12">
+    <section id="home" className="min-h-[calc(100vh-4rem)] md:min-h-[50vh] flex items-center justify-center relative overflow-hidden bg-gradient-to-b from-gray-900 to-gray-800 pt-16 md:pt-0">
+      <div className="w-full max-w-6xl mx-auto px-4 sm:px-6 md:px-8">
+        <div className="flex flex-col md:flex-row-reverse items-center justify-center gap-8 md:gap-12">
           {/* Right side - Text content */}
           <motion.div
             initial={{ opacity: 0, x: 50 }}

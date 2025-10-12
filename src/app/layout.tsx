@@ -11,6 +11,21 @@ const inter = Inter({
 export const metadata: Metadata = {
   title: "Abhinav Meduri - Software Engineer & ML Engineer",
   description: "Personal portfolio website showcasing my experience in software engineering, machine learning, and full-stack development.",
+  viewport: {
+    width: 'device-width',
+    initialScale: 1,
+    maximumScale: 1,
+    viewportFit: 'cover',
+  },
+  appleWebApp: {
+    capable: true,
+    statusBarStyle: 'default',
+    title: 'Abhinav Meduri',
+  },
+  formatDetection: {
+    telephone: false,
+  },
+  themeColor: '#111827', // bg-gray-900
 };
 
 export default function RootLayout({
