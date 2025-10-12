@@ -33,12 +33,17 @@ const Navigation = () => {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
-          <motion.div
+          <motion.a
+            href="#"
+            className="flex items-center space-x-2"
             whileHover={{ scale: 1.05 }}
-            className="text-xl font-bold text-white"
           >
-            Abhinav Meduri
-          </motion.div>
+            <img 
+              src="/logo.svg" 
+              alt="Abhinav Meduri Logo" 
+              className="h-10 w-auto"
+            />
+          </motion.a>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex space-x-8">

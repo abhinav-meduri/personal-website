@@ -1,0 +1,11 @@
+<svg width="300" height="80" viewBox="0 0 300 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Abstract Circuit Board Icon -->
+  <path d="M30 40H15V25H30V15H45V25H60V40H70V55H55V70H40V55H25V40H30Z" fill="#3B82F6"/>
+  <path d="M30 40H15M30 40V25H45V15M30 40V55H25M45 15H30V25M45 15H60V25M25 55V70H40V55M25 55H40M40 55H55V40H70M55 25V40H60" stroke="#3B82F6" stroke-width="2"/>
+  
+  <!-- Name Text -->
+  <text x="90" y="50" font-family="Inter, sans-serif" font-size="36" font-weight="600" fill="white">Abhinav Meduri</text>
+  
+  <!-- Accent Line -->
+  <line x1="90" y1="60" x2="290" y2="60" stroke="#3B82F6" stroke-width="4" stroke-linecap="round"/>
+</svg>
