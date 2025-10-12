@@ -58,7 +58,7 @@ const Experience = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
               transition={{ duration: 0.6, delay: index * 0.15 }}
-              className="bg-gray-800/50 hover:bg-gray-750/70 transition-colors duration-200 rounded-lg p-4 border-l-4 border-gray-600 hover:border-gray-400"
+              className="bg-gray-800/50 hover:bg-gray-750/70 transition-colors duration-200 rounded-lg p-4 border-l-2 border-gray-600 hover:border-gray-400 max-w-3xl mx-auto w-full"
             >
               <div className="flex items-start">
                 <div className={`${exp.company.includes('Reveal') ? 'w-14 h-14' : 'w-10 h-10'} bg-transparent rounded flex-shrink-0 flex items-center justify-center mr-3`}>
