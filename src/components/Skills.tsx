@@ -4,7 +4,6 @@ import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import { useRef } from 'react';
 import Image from 'next/image';
-import Link from 'next/link';
 
 const skillCategories = [
   {
@@ -58,99 +57,89 @@ const Skills = () => {
   };
 
   return (
-    <>
-      <section id="skills" className="py-12 bg-gray-900">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            ref={ref}
-            initial={{ opacity: 0, y: 20 }}
-            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-            transition={{ duration: 0.5 }}
-            className="text-center mb-12"
-          >
-            <h2 className="text-3xl font-bold text-white mb-3">
-              Technical Skills
-            </h2>
-            <div className="w-16 h-1 bg-blue-500 mx-auto rounded-full"></div>
-          </motion.div>
+    <section id="skills" className="py-16 bg-gradient-to-b from-gray-900 to-gray-800">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <motion.div
+          ref={ref}
+          initial={{ opacity: 0, y: 20 }}
+          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+          transition={{ duration: 0.5 }}
+          className="text-center mb-12"
+        >
+          <h2 className="text-3xl font-bold text-white mb-3">
+            Technical Skills
+          </h2>
+          <div className="w-16 h-1 bg-blue-500 mx-auto rounded-full"></div>
+        </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {skillCategories.map((category, categoryIndex) => (
-              <motion.div
-                key={categoryIndex}
-                initial={{ opacity: 0, y: 30 }}
-                animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-                transition={{ duration: 0.5, delay: categoryIndex * 0.15 }}
-                className="bg-gray-800 rounded-xl shadow-lg p-6 hover:shadow-xl transition-shadow duration-300"
-              >
-                <h3 className="text-xl font-bold text-white mb-6 text-center pb-3 border-b border-gray-700">
-                  {category.title}
-                  <div className="w-12 h-1 bg-blue-500 mx-auto mt-2 rounded-full"></div>
-                </h3>
-                
-                <div className="flex flex-wrap gap-4 justify-center">
-                  {category.skills.map((skill, skillIndex) => {
-                    const iconPath = getSkillIconPath(skill);
-                    return (
-                      <motion.div
-                        key={skillIndex}
-                        initial={{ opacity: 0, scale: 0.9 }}
-                        animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.9 }}
-                        transition={{ 
-                          duration: 0.3, 
-                          delay: (categoryIndex * 0.1) + (skillIndex * 0.03) 
-                        }}
-                        className="flex flex-col items-center group"
-                      >
-                        <div className="w-12 h-12 bg-gray-700 rounded-lg flex items-center justify-center p-2 transition-all duration-300 group-hover:bg-gray-600 group-hover:shadow-md">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {skillCategories.map((category, categoryIndex) => (
+            <motion.div
+              key={categoryIndex}
+              initial={{ opacity: 0, y: 30 }}
+              animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+              transition={{ duration: 0.5, delay: categoryIndex * 0.15 }}
+              className="bg-gray-800/50 rounded-xl shadow-lg p-6 hover:shadow-xl transition-shadow duration-300 backdrop-blur-sm"
+            >
+              <h3 className="text-xl font-bold text-white mb-6 text-center pb-3 border-b border-gray-700">
+                {category.title}
+                <div className="w-12 h-1 bg-blue-500 mx-auto mt-2 rounded-full"></div>
+              </h3>
+              
+              <div className="flex flex-wrap gap-4 justify-center">
+                {category.skills.map((skill, skillIndex) => {
+                  const isSQL = skill.toLowerCase() === 'sql';
+                  const isAWS = skill.toLowerCase() === 'aws';
+                  return (
+                    <motion.div
+                      key={skillIndex}
+                      initial={{ opacity: 0, scale: 0.9 }}
+                      animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.9 }}
+                      transition={{ 
+                        duration: 0.3, 
+                        delay: (categoryIndex * 0.1) + (skillIndex * 0.03) 
+                      }}
+                      className="flex flex-col items-center group"
+                    >
+                      <div className="w-12 h-12 bg-gray-700/50 rounded-lg flex items-center justify-center p-2 transition-all duration-300 group-hover:bg-gray-600/50 group-hover:shadow-md">
+                        {isSQL ? (
                           <Image 
-                            src={`https://cdn.jsdelivr.net/gh/devicons/devicon/icons/${iconPath}.svg`}
+                            src="/logos/sql.png"
                             alt={skill}
                             width={32}
                             height={32}
                             className="w-6 h-6 object-contain"
                           />
-                        </div>
-                        <span className="text-xs mt-2 text-center text-gray-300 font-medium">
-                          {skill}
-                        </span>
-                      </motion.div>
-                    );
-                  })}
-                </div>
-              </motion.div>
-            ))}
-          </div>
+                        ) : isAWS ? (
+                          <Image 
+                            src="/logos/aws.png"
+                            alt={skill}
+                            width={32}
+                            height={32}
+                            className="w-6 h-6 object-contain"
+                          />
+                        ) : (
+                          <Image 
+                            src={`https://cdn.jsdelivr.net/gh/devicons/devicon/icons/${getSkillIconPath(skill)}.svg`}
+                            alt={skill}
+                            width={32}
+                            height={32}
+                            className="w-6 h-6 object-contain"
+                          />
+                        )}
+                      </div>
+                      <span className="text-xs mt-2 text-center text-gray-300 font-medium">
+                        {skill}
+                      </span>
+                    </motion.div>
+                  );
+                })}
+              </div>
+            </motion.div>
+          ))}
         </div>
-      </section>
-
-      <section id="connect" className="py-16 bg-gray-800">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-            className="text-center mb-12"
-          >
-            <h2 className="text-3xl font-bold text-white mb-3">
-              Let's Connect
-            </h2>
-            <div className="w-16 h-1 bg-blue-500 mx-auto rounded-full"></div>
-            <p className="mt-6 text-gray-300 max-w-2xl mx-auto">
-              Interested in working together or have questions? Feel free to reach out!
-            </p>
-            <div className="mt-8">
-              <Link 
-                href="#contact" 
-                className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-colors"
-              >
-                Get In Touch
-              </Link>
-            </div>
-          </motion.div>
-        </div>
-      </section>
-    </>
+      </div>
+    </section>
   );
 };
 
