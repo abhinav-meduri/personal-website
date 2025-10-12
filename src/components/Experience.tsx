@@ -38,19 +38,17 @@ const Experience = () => {
   ];
 
   return (
-    <section id="experience" className="py-20 bg-gray-900">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6">
+    <section id="experience" className="py-16 bg-gray-800">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           ref={ref}
-          initial={{ opacity: 0, y: 30 }}
-          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-          transition={{ duration: 0.6 }}
-          className="mb-12"
+          initial={{ opacity: 0, y: 20 }}
+          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+          transition={{ duration: 0.5 }}
+          className="text-center mb-12"
         >
-          <h2 className="text-3xl font-bold text-white mb-2">
-            Experience
-          </h2>
-          <div className="w-16 h-0.5 bg-gray-600"></div>
+          <h2 className="text-3xl font-bold text-white mb-3">Experience</h2>
+          <div className="w-16 h-1 bg-blue-500 mx-auto rounded-full"></div>
         </motion.div>
 
         <div className="space-y-4">
