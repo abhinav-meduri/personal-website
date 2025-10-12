@@ -38,7 +38,7 @@ const Experience = () => {
   ];
 
   return (
-    <section id="experience" className="py-16 bg-gray-800">
+    <section id="experience" className="py-16 bg-gradient-to-b from-gray-900 to-gray-800">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           ref={ref}
