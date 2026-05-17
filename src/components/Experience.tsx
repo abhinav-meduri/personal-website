@@ -12,6 +12,12 @@ const Experience = () => {
 
   const experiences = [
     {
+      company: 'IBM Infrastructure',
+      position: 'Software Developer Intern',
+      duration: 'May 2026 – Aug 2026',
+      location: 'Durham, NC'
+    },
+    {
       company: 'Reveal Genomics',
       position: 'Machine Learning Engineer',
       duration: 'Oct 2025 – Present',

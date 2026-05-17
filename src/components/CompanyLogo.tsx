@@ -20,6 +20,8 @@ const CompanyLogo = ({ company, size = 48, className = '' }: CompanyLogoProps) =
       return '/logos/ecolong.png';
     } else if (companyLower.includes('duke')) {
       return '/logos/duke.png';
+    } else if (companyLower.includes('ibm')) {
+      return '/logos/IBM.png';
     }
     
     return null;
