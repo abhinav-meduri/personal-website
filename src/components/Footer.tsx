@@ -29,7 +29,7 @@ const Footer = () => {
                 <Github className="w-5 h-5" />
               </motion.a>
               <motion.a
-                href="https://linkedin.com/in/abhinavmeduri"
+                href="https://www.linkedin.com/in/abhinav-meduri/"
                 target="_blank"
                 rel="noopener noreferrer"
                 whileHover={{ scale: 1.1, y: -2 }}

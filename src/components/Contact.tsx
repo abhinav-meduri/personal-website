@@ -139,7 +139,7 @@ const Contact = () => {
                     <Github className="w-6 h-6" />
                   </motion.a>
                   <motion.a
-                    href="https://linkedin.com/in/abhinavmeduri"
+                    href="https://www.linkedin.com/in/abhinav-meduri/"
                     target="_blank"
                     rel="noopener noreferrer"
                     whileHover={{ scale: 1.1, y: -2 }}

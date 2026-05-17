@@ -54,7 +54,7 @@ const Hero = () => {
                 <Github size={24} />
               </motion.a>
               <motion.a
-                href="https://linkedin.com/in/abhinavmeduri"
+                href="https://www.linkedin.com/in/abhinav-meduri/"
                 target="_blank"
                 rel="noopener noreferrer"
                 whileHover={{ scale: 1.2, y: -2 }}
